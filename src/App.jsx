@@ -1,16 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import {useSelector,useDispatch} from 'react-redux';
-import { set_data } from './Store/Actions';
+import {Update} from './Store/Reducers/reducer1'
 
 function App() {
+  //map state to props
   const data=useSelector((state)=>{
     return state;
   })
   const dispatch=useDispatch()
 const disp_data=(data)=>{
-    dispatch(set_data(data))
-    //console.log("chal raha==>",data);
+  //map dispatch to props
+   // dispatch(set_data(data))
+   // dispatch(fetch_data())
+   dispatch(Update(data))
 }
 console.log("redux data==>",data);
   return (
